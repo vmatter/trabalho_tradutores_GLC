@@ -6,20 +6,49 @@ options {
 @members {
 String s;
 }
-prog:   stat+ ; 
 
-stat	:	ID ATTRIB expr SEMICOLON
-	;
+prog:   commands+;
+
+commands
+    : expr_attrib
+    | conditional
+    | loop
+    | SEMICOLON
+    ;	
 	
-expr
-    :   ID ('*'|'/'|'+'|'-') expr
-    |	INT ('*'|'/'|'+'|'-') expr
-    |   INT                    
-    |   ID                    
-    |   '(' expr ')'         
+expr_arith
+    :   VARIABLE ARITH_OP expr_arith
+    |	CONST ARITH_OP expr_arith
+    |   CONST                    
+    |   VARIABLE                    
+    |   '(' expr_arith ')'         
+    ;    
+	
+expr_relat
+    :	expr_arith RELAT_OP expr_arith
+    ;
+    
+expr_attrib
+    : VARIABLE ATTRIB expr_arith
+    ;
+
+conditional
+    :	'if ' expr_relat ' then' commands conditional_else?
+    ;
+
+conditional_else
+    : ' else ' commands
     ;	
     
-ID  :	('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')*
+loop
+    : 'while ' expr_relat ' do' commands
+    ;
+    
+VARIABLE  
+    : ('a'..'z'|'A'..'Z')+
+    ;
+
+CONST :	('0'..'9')+
     ;
 
 FLOAT
@@ -47,11 +76,11 @@ CHAR:  '\'' ( ESC_SEQ | ~('\''|'\\') ) '\''
     ;
     
 ARITH_OP
-    : '++'|'+'|'--'|'-'|'*'|'/'
+    : '*'|'/'|'+'|'-'
     ;	
     
 RELAT_OP
-    :	'<'|'<='|'=='|'!='|'>='|'>'
+    :	'='|'<>'|'<'|'>'|'<='|'>='
     ;
     
 ATTRIB	
@@ -61,12 +90,6 @@ ATTRIB
 SEMICOLON
     :	';'
     ;
-    
-INT :	'0'..'9'+
-    ;
-    
-CONDITIONAL 
-    :
 
 fragment
 ESC_SEQ
