@@ -1,3 +1,3 @@
 # trabalho_tradutores_GLC
 
-Teste
+Need update.
