@@ -1,8 +1,8 @@
-while a > 2 do 
-	a := a + 1; 
-	b := 4 + a; 
-	c := 2;
-	if a = b then 
-	   b := a;
-	end
+a := 2;
+while a > 2 do
+   b := 2;
+   if 2 = 2 then
+      b := 4;
+   end
+   b := 6;	
 end
