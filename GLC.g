@@ -10,9 +10,9 @@ String s;
 prog:   commands+;
 
 commands
-    : expr_attrib
-    | conditional
+    : conditional
     | loop
+    | expr_attrib
     | SEMICOLON
     ;	
 	
@@ -33,15 +33,15 @@ expr_attrib
     ;
 
 conditional
-    :	'if ' expr_relat ' then' commands conditional_else?
+    :	'if'  expr_relat 'then' commands+ conditional_else? 'end'
     ;
 
 conditional_else
-    : ' else ' commands
+    : 'else' commands+ 
     ;	
     
 loop
-    : 'while ' expr_relat ' do' commands
+    : 'while' expr_relat 'do' commands+ 'end'
     ;
     
 VARIABLE  
