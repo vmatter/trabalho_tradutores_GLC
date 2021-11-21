@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g 2021-11-21 09:42:47
+// $ANTLR 3.5.1 E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g 2021-11-21 10:45:03
 
 	import java.util.HashMap;
 	import java.util.Map;
@@ -53,8 +53,8 @@ public class GLCParser extends DebugParser {
 
 
 	public static final String[] ruleNames = new String[] {
-		"invalidRule", "commands", "conditional_else", "expr_attrib", "expr_arith", 
-		"loop", "prog", "conditional", "expr_relat"
+		"invalidRule", "expr_attrib", "conditional_else", "loop", "expr_relat", 
+		"prog", "commands", "conditional", "expr_arith"
 	};
 
 	public static final boolean[] decisionCanBacktrack = new boolean[] {
@@ -103,25 +103,26 @@ public class GLCParser extends DebugParser {
 		boolean validate_condition = true;
 		double condition_validator = 0.0;
 		String condition_op = "";
+		double aux = 0.0;
 
 
 
 	// $ANTLR start "prog"
-	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:21:1: prog : ( commands )+ ;
+	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:22:1: prog : ( commands )+ ;
 	public final void prog() throws RecognitionException {
 		try { dbg.enterRule(getGrammarFileName(), "prog");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(21, 0);
+		dbg.location(22, 0);
 
 		try {
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:21:5: ( ( commands )+ )
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:22:5: ( ( commands )+ )
 			dbg.enterAlt(1);
 
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:21:9: ( commands )+
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:22:9: ( commands )+
 			{
-			dbg.location(21,9);
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:21:9: ( commands )+
+			dbg.location(22,9);
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:22:9: ( commands )+
 			int cnt1=0;
 			try { dbg.enterSubRule(1);
 
@@ -141,9 +142,9 @@ public class GLCParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:21:9: commands
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:22:9: commands
 					{
-					dbg.location(21,9);
+					dbg.location(22,9);
 					pushFollow(FOLLOW_commands_in_prog37);
 					commands();
 					state._fsp--;
@@ -172,7 +173,7 @@ public class GLCParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(21, 17);
+		dbg.location(22, 17);
 
 		}
 		finally {
@@ -187,15 +188,15 @@ public class GLCParser extends DebugParser {
 
 
 	// $ANTLR start "commands"
-	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:23:1: commands : ( conditional | loop | expr_attrib | SEMICOLON );
+	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:24:1: commands : ( conditional | loop | expr_attrib | SEMICOLON );
 	public final void commands() throws RecognitionException {
 		try { dbg.enterRule(getGrammarFileName(), "commands");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(23, 0);
+		dbg.location(24, 0);
 
 		try {
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:24:5: ( conditional | loop | expr_attrib | SEMICOLON )
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:25:5: ( conditional | loop | expr_attrib | SEMICOLON )
 			int alt2=4;
 			try { dbg.enterDecision(2, decisionCanBacktrack[2]);
 
@@ -232,9 +233,9 @@ public class GLCParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:24:7: conditional
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:25:7: conditional
 					{
-					dbg.location(24,7);
+					dbg.location(25,7);
 					pushFollow(FOLLOW_conditional_in_commands50);
 					conditional();
 					state._fsp--;
@@ -244,9 +245,9 @@ public class GLCParser extends DebugParser {
 				case 2 :
 					dbg.enterAlt(2);
 
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:25:7: loop
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:26:7: loop
 					{
-					dbg.location(25,7);
+					dbg.location(26,7);
 					pushFollow(FOLLOW_loop_in_commands58);
 					loop();
 					state._fsp--;
@@ -256,9 +257,9 @@ public class GLCParser extends DebugParser {
 				case 3 :
 					dbg.enterAlt(3);
 
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:26:7: expr_attrib
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:27:7: expr_attrib
 					{
-					dbg.location(26,7);
+					dbg.location(27,7);
 					pushFollow(FOLLOW_expr_attrib_in_commands66);
 					expr_attrib();
 					state._fsp--;
@@ -268,9 +269,9 @@ public class GLCParser extends DebugParser {
 				case 4 :
 					dbg.enterAlt(4);
 
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:27:7: SEMICOLON
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:28:7: SEMICOLON
 					{
-					dbg.location(27,7);
+					dbg.location(28,7);
 					match(input,SEMICOLON,FOLLOW_SEMICOLON_in_commands74); 
 					}
 					break;
@@ -284,7 +285,7 @@ public class GLCParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(28, 4);
+		dbg.location(29, 4);
 
 		}
 		finally {
@@ -299,7 +300,7 @@ public class GLCParser extends DebugParser {
 
 
 	// $ANTLR start "conditional"
-	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:30:1: conditional returns [ double v ] : 'if' e= expr_relat 'then' ( commands )+ ( conditional_else )? 'end' ;
+	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:31:1: conditional returns [ double v ] : 'if' e= expr_relat 'then' ( commands )+ ( conditional_else )? 'end' ;
 	public final double conditional() throws RecognitionException {
 		double v = 0.0;
 
@@ -309,23 +310,23 @@ public class GLCParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "conditional");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(30, 0);
+		dbg.location(31, 0);
 
 		try {
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:31:5: ( 'if' e= expr_relat 'then' ( commands )+ ( conditional_else )? 'end' )
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:32:5: ( 'if' e= expr_relat 'then' ( commands )+ ( conditional_else )? 'end' )
 			dbg.enterAlt(1);
 
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:31:7: 'if' e= expr_relat 'then' ( commands )+ ( conditional_else )? 'end'
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:32:7: 'if' e= expr_relat 'then' ( commands )+ ( conditional_else )? 'end'
 			{
-			dbg.location(31,7);
-			match(input,24,FOLLOW_24_in_conditional100); dbg.location(31,15);
+			dbg.location(32,7);
+			match(input,24,FOLLOW_24_in_conditional100); dbg.location(32,15);
 			pushFollow(FOLLOW_expr_relat_in_conditional107);
 			e=expr_relat();
 			state._fsp--;
-			dbg.location(31,28);
-			v = e;dbg.location(31,41);
-			match(input,25,FOLLOW_25_in_conditional111); dbg.location(31,48);
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:31:48: ( commands )+
+			dbg.location(32,28);
+			v = e;dbg.location(32,41);
+			match(input,25,FOLLOW_25_in_conditional111); dbg.location(32,48);
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:32:48: ( commands )+
 			int cnt3=0;
 			try { dbg.enterSubRule(3);
 
@@ -345,9 +346,9 @@ public class GLCParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:31:48: commands
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:32:48: commands
 					{
-					dbg.location(31,48);
+					dbg.location(32,48);
 					pushFollow(FOLLOW_commands_in_conditional113);
 					commands();
 					state._fsp--;
@@ -365,8 +366,8 @@ public class GLCParser extends DebugParser {
 				cnt3++;
 			}
 			} finally {dbg.exitSubRule(3);}
-			dbg.location(31,58);
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:31:58: ( conditional_else )?
+			dbg.location(32,58);
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:32:58: ( conditional_else )?
 			int alt4=2;
 			try { dbg.enterSubRule(4);
 			try { dbg.enterDecision(4, decisionCanBacktrack[4]);
@@ -381,9 +382,9 @@ public class GLCParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:31:58: conditional_else
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:32:58: conditional_else
 					{
-					dbg.location(31,58);
+					dbg.location(32,58);
 					pushFollow(FOLLOW_conditional_else_in_conditional116);
 					conditional_else();
 					state._fsp--;
@@ -393,8 +394,8 @@ public class GLCParser extends DebugParser {
 
 			}
 			} finally {dbg.exitSubRule(4);}
-			dbg.location(31,76);
-			match(input,23,FOLLOW_23_in_conditional119); dbg.location(31,82);
+			dbg.location(32,76);
+			match(input,23,FOLLOW_23_in_conditional119); dbg.location(32,82);
 			if (v == 1) validate_condition = true;
 			}
 
@@ -406,7 +407,7 @@ public class GLCParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(32, 4);
+		dbg.location(33, 4);
 
 		}
 		finally {
@@ -422,22 +423,22 @@ public class GLCParser extends DebugParser {
 
 
 	// $ANTLR start "conditional_else"
-	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:34:1: conditional_else : 'else' ( commands )+ ;
+	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:35:1: conditional_else : 'else' ( commands )+ ;
 	public final void conditional_else() throws RecognitionException {
 		try { dbg.enterRule(getGrammarFileName(), "conditional_else");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(34, 0);
+		dbg.location(35, 0);
 
 		try {
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:35:5: ( 'else' ( commands )+ )
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:36:5: ( 'else' ( commands )+ )
 			dbg.enterAlt(1);
 
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:35:7: 'else' ( commands )+
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:36:7: 'else' ( commands )+
 			{
-			dbg.location(35,7);
-			match(input,22,FOLLOW_22_in_conditional_else138); dbg.location(35,14);
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:35:14: ( commands )+
+			dbg.location(36,7);
+			match(input,22,FOLLOW_22_in_conditional_else138); dbg.location(36,14);
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:36:14: ( commands )+
 			int cnt5=0;
 			try { dbg.enterSubRule(5);
 
@@ -457,9 +458,9 @@ public class GLCParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:35:14: commands
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:36:14: commands
 					{
-					dbg.location(35,14);
+					dbg.location(36,14);
 					pushFollow(FOLLOW_commands_in_conditional_else140);
 					commands();
 					state._fsp--;
@@ -488,7 +489,7 @@ public class GLCParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(36, 4);
+		dbg.location(37, 4);
 
 		}
 		finally {
@@ -503,7 +504,7 @@ public class GLCParser extends DebugParser {
 
 
 	// $ANTLR start "loop"
-	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:38:1: loop returns [ double v ] : 'while' e= expr_relat 'do' ( commands )+ 'end' ;
+	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:39:1: loop returns [ double v ] : 'while' e= expr_relat 'do' ( commands )+ 'end' ;
 	public final double loop() throws RecognitionException {
 		double v = 0.0;
 
@@ -513,23 +514,23 @@ public class GLCParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "loop");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(38, 0);
+		dbg.location(39, 0);
 
 		try {
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:39:5: ( 'while' e= expr_relat 'do' ( commands )+ 'end' )
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:40:5: ( 'while' e= expr_relat 'do' ( commands )+ 'end' )
 			dbg.enterAlt(1);
 
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:39:7: 'while' e= expr_relat 'do' ( commands )+ 'end'
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:40:7: 'while' e= expr_relat 'do' ( commands )+ 'end'
 			{
-			dbg.location(39,7);
-			match(input,26,FOLLOW_26_in_loop168); dbg.location(39,17);
+			dbg.location(40,7);
+			match(input,26,FOLLOW_26_in_loop168); dbg.location(40,17);
 			pushFollow(FOLLOW_expr_relat_in_loop174);
 			e=expr_relat();
 			state._fsp--;
-			dbg.location(39,30);
-			v = e;dbg.location(39,43);
-			match(input,21,FOLLOW_21_in_loop178); dbg.location(39,48);
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:39:48: ( commands )+
+			dbg.location(40,30);
+			v = e;dbg.location(40,43);
+			match(input,21,FOLLOW_21_in_loop178); dbg.location(40,48);
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:40:48: ( commands )+
 			int cnt6=0;
 			try { dbg.enterSubRule(6);
 
@@ -549,9 +550,9 @@ public class GLCParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:39:48: commands
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:40:48: commands
 					{
-					dbg.location(39,48);
+					dbg.location(40,48);
 					pushFollow(FOLLOW_commands_in_loop180);
 					commands();
 					state._fsp--;
@@ -569,8 +570,8 @@ public class GLCParser extends DebugParser {
 				cnt6++;
 			}
 			} finally {dbg.exitSubRule(6);}
-			dbg.location(39,58);
-			match(input,23,FOLLOW_23_in_loop183); dbg.location(39,64);
+			dbg.location(40,58);
+			match(input,23,FOLLOW_23_in_loop183); dbg.location(40,64);
 			if (v == 1) validate_condition = true;
 			}
 
@@ -582,7 +583,7 @@ public class GLCParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(40, 4);
+		dbg.location(41, 4);
 
 		}
 		finally {
@@ -598,7 +599,7 @@ public class GLCParser extends DebugParser {
 
 
 	// $ANTLR start "expr_attrib"
-	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:42:1: expr_attrib returns [ double v ] : VARIABLE ATTRIB e= expr_arith ;
+	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:43:1: expr_attrib returns [ double v ] : VARIABLE ATTRIB e= expr_arith ;
 	public final double expr_attrib() throws RecognitionException {
 		double v = 0.0;
 
@@ -609,22 +610,22 @@ public class GLCParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "expr_attrib");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(42, 0);
+		dbg.location(43, 0);
 
 		try {
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:43:5: ( VARIABLE ATTRIB e= expr_arith )
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:44:5: ( VARIABLE ATTRIB e= expr_arith )
 			dbg.enterAlt(1);
 
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:43:7: VARIABLE ATTRIB e= expr_arith
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:44:7: VARIABLE ATTRIB e= expr_arith
 			{
-			dbg.location(43,7);
-			VARIABLE1=(Token)match(input,VARIABLE,FOLLOW_VARIABLE_in_expr_attrib210); dbg.location(43,16);
-			variable = (VARIABLE1!=null?VARIABLE1.getText():null);dbg.location(43,45);
-			match(input,ATTRIB,FOLLOW_ATTRIB_in_expr_attrib214); dbg.location(43,54);
+			dbg.location(44,7);
+			VARIABLE1=(Token)match(input,VARIABLE,FOLLOW_VARIABLE_in_expr_attrib210); dbg.location(44,16);
+			variable = (VARIABLE1!=null?VARIABLE1.getText():null);dbg.location(44,45);
+			match(input,ATTRIB,FOLLOW_ATTRIB_in_expr_attrib214); dbg.location(44,54);
 			pushFollow(FOLLOW_expr_arith_in_expr_attrib220);
 			e=expr_arith();
 			state._fsp--;
-			dbg.location(43,67);
+			dbg.location(44,67);
 
 			    		v = e;
 					if(validate_condition) { 
@@ -642,7 +643,7 @@ public class GLCParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(50, 4);
+		dbg.location(51, 4);
 
 		}
 		finally {
@@ -658,7 +659,7 @@ public class GLCParser extends DebugParser {
 
 
 	// $ANTLR start "expr_arith"
-	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:52:1: expr_arith returns [ double v ] : ( ( CONST | VARIABLE ) ( '*' e= expr_arith | '/' e= expr_arith | '+' e= expr_arith | '-' e= expr_arith )? | '(' e= expr_arith ')' );
+	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:53:1: expr_arith returns [ double v ] : ( ( CONST | VARIABLE ) ( '*' e= expr_arith | '/' e= expr_arith | '+' e= expr_arith | '-' e= expr_arith )? | '(' e= expr_arith ')' );
 	public final double expr_arith() throws RecognitionException {
 		double v = 0.0;
 
@@ -670,10 +671,10 @@ public class GLCParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "expr_arith");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(52, 0);
+		dbg.location(53, 0);
 
 		try {
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:53:5: ( ( CONST | VARIABLE ) ( '*' e= expr_arith | '/' e= expr_arith | '+' e= expr_arith | '-' e= expr_arith )? | '(' e= expr_arith ')' )
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:54:5: ( ( CONST | VARIABLE ) ( '*' e= expr_arith | '/' e= expr_arith | '+' e= expr_arith | '-' e= expr_arith )? | '(' e= expr_arith ')' )
 			int alt9=2;
 			try { dbg.enterDecision(9, decisionCanBacktrack[9]);
 
@@ -698,10 +699,10 @@ public class GLCParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:53:9: ( CONST | VARIABLE ) ( '*' e= expr_arith | '/' e= expr_arith | '+' e= expr_arith | '-' e= expr_arith )?
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:54:9: ( CONST | VARIABLE ) ( '*' e= expr_arith | '/' e= expr_arith | '+' e= expr_arith | '-' e= expr_arith )?
 					{
-					dbg.location(53,9);
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:53:9: ( CONST | VARIABLE )
+					dbg.location(54,9);
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:54:9: ( CONST | VARIABLE )
 					int alt7=2;
 					try { dbg.enterSubRule(7);
 					try { dbg.enterDecision(7, decisionCanBacktrack[7]);
@@ -727,20 +728,20 @@ public class GLCParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:54:10: CONST
+							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:55:10: CONST
 							{
-							dbg.location(54,10);
-							CONST2=(Token)match(input,CONST,FOLLOW_CONST_in_expr_arith260); dbg.location(54,16);
+							dbg.location(55,10);
+							CONST2=(Token)match(input,CONST,FOLLOW_CONST_in_expr_arith260); dbg.location(55,16);
 							v = Double.parseDouble((CONST2!=null?CONST2.getText():null));
 							}
 							break;
 						case 2 :
 							dbg.enterAlt(2);
 
-							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:55:9: VARIABLE
+							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:56:9: VARIABLE
 							{
-							dbg.location(55,9);
-							VARIABLE3=(Token)match(input,VARIABLE,FOLLOW_VARIABLE_in_expr_arith272); dbg.location(55,18);
+							dbg.location(56,9);
+							VARIABLE3=(Token)match(input,VARIABLE,FOLLOW_VARIABLE_in_expr_arith272); dbg.location(56,18);
 							 variable_temp = (VARIABLE3!=null?VARIABLE3.getText():null);
 							                   	if(map.get(variable_temp) != null) {
 										   v = map.get(variable_temp);
@@ -753,8 +754,8 @@ public class GLCParser extends DebugParser {
 
 					}
 					} finally {dbg.exitSubRule(7);}
-					dbg.location(63,9);
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:63:9: ( '*' e= expr_arith | '/' e= expr_arith | '+' e= expr_arith | '-' e= expr_arith )?
+					dbg.location(64,9);
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:64:9: ( '*' e= expr_arith | '/' e= expr_arith | '+' e= expr_arith | '-' e= expr_arith )?
 					int alt8=5;
 					try { dbg.enterSubRule(8);
 					try { dbg.enterDecision(8, decisionCanBacktrack[8]);
@@ -787,14 +788,14 @@ public class GLCParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:65:14: '*' e= expr_arith
+							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:66:14: '*' e= expr_arith
 							{
-							dbg.location(65,14);
-							match(input,17,FOLLOW_17_in_expr_arith338); dbg.location(65,20);
+							dbg.location(66,14);
+							match(input,17,FOLLOW_17_in_expr_arith338); dbg.location(66,20);
 							pushFollow(FOLLOW_expr_arith_in_expr_arith344);
 							e=expr_arith();
 							state._fsp--;
-							dbg.location(65,33);
+							dbg.location(66,33);
 
 										v *= e;
 									    
@@ -803,14 +804,14 @@ public class GLCParser extends DebugParser {
 						case 2 :
 							dbg.enterAlt(2);
 
-							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:68:8: '/' e= expr_arith
+							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:69:8: '/' e= expr_arith
 							{
-							dbg.location(68,8);
-							match(input,20,FOLLOW_20_in_expr_arith355); dbg.location(68,14);
+							dbg.location(69,8);
+							match(input,20,FOLLOW_20_in_expr_arith355); dbg.location(69,14);
 							pushFollow(FOLLOW_expr_arith_in_expr_arith361);
 							e=expr_arith();
 							state._fsp--;
-							dbg.location(68,27);
+							dbg.location(69,27);
 
 										if(e == 0) {
 											System.out.println("ERROR: Division by 0.");
@@ -823,14 +824,14 @@ public class GLCParser extends DebugParser {
 						case 3 :
 							dbg.enterAlt(3);
 
-							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:75:8: '+' e= expr_arith
+							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:76:8: '+' e= expr_arith
 							{
-							dbg.location(75,8);
-							match(input,18,FOLLOW_18_in_expr_arith372); dbg.location(75,14);
+							dbg.location(76,8);
+							match(input,18,FOLLOW_18_in_expr_arith372); dbg.location(76,14);
 							pushFollow(FOLLOW_expr_arith_in_expr_arith378);
 							e=expr_arith();
 							state._fsp--;
-							dbg.location(75,27);
+							dbg.location(76,27);
 
 										v += e;
 									    
@@ -839,14 +840,14 @@ public class GLCParser extends DebugParser {
 						case 4 :
 							dbg.enterAlt(4);
 
-							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:78:8: '-' e= expr_arith
+							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:79:8: '-' e= expr_arith
 							{
-							dbg.location(78,8);
-							match(input,19,FOLLOW_19_in_expr_arith389); dbg.location(78,14);
+							dbg.location(79,8);
+							match(input,19,FOLLOW_19_in_expr_arith389); dbg.location(79,14);
 							pushFollow(FOLLOW_expr_arith_in_expr_arith395);
 							e=expr_arith();
 							state._fsp--;
-							dbg.location(78,27);
+							dbg.location(79,27);
 
 										v -= e;
 									    
@@ -861,15 +862,15 @@ public class GLCParser extends DebugParser {
 				case 2 :
 					dbg.enterAlt(2);
 
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:82:8: '(' e= expr_arith ')'
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:83:8: '(' e= expr_arith ')'
 					{
-					dbg.location(82,8);
-					match(input,15,FOLLOW_15_in_expr_arith410); dbg.location(82,14);
+					dbg.location(83,8);
+					match(input,15,FOLLOW_15_in_expr_arith410); dbg.location(83,14);
 					pushFollow(FOLLOW_expr_arith_in_expr_arith416);
 					e=expr_arith();
 					state._fsp--;
-					dbg.location(82,27);
-					v = e;dbg.location(82,40);
+					dbg.location(83,27);
+					v = e;dbg.location(83,40);
 					match(input,16,FOLLOW_16_in_expr_arith420); 
 					}
 					break;
@@ -883,7 +884,7 @@ public class GLCParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(83, 1);
+		dbg.location(84, 1);
 
 		}
 		finally {
@@ -899,7 +900,7 @@ public class GLCParser extends DebugParser {
 
 
 	// $ANTLR start "expr_relat"
-	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:85:1: expr_relat returns [ double v ] : e= expr_arith RELAT_OP e= expr_arith ;
+	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:86:1: expr_relat returns [ double v ] : e= expr_arith RELAT_OP e= expr_arith ;
 	public final double expr_relat() throws RecognitionException {
 		double v = 0.0;
 
@@ -910,44 +911,44 @@ public class GLCParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "expr_relat");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(85, 0);
+		dbg.location(86, 0);
 
 		try {
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:86:5: (e= expr_arith RELAT_OP e= expr_arith )
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:87:5: (e= expr_arith RELAT_OP e= expr_arith )
 			dbg.enterAlt(1);
 
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:86:7: e= expr_arith RELAT_OP e= expr_arith
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:87:7: e= expr_arith RELAT_OP e= expr_arith
 			{
-			dbg.location(86,9);
+			dbg.location(87,9);
 			pushFollow(FOLLOW_expr_arith_in_expr_relat450);
 			e=expr_arith();
 			state._fsp--;
-			dbg.location(86,22);
+			dbg.location(87,22);
 
 			 	    condition_validator = e;
-			        dbg.location(89,6);
-			RELAT_OP4=(Token)match(input,RELAT_OP,FOLLOW_RELAT_OP_in_expr_relat460); dbg.location(89,15);
-			condition_op = (RELAT_OP4!=null?RELAT_OP4.getText():null);dbg.location(90,4);
+			        dbg.location(90,6);
+			RELAT_OP4=(Token)match(input,RELAT_OP,FOLLOW_RELAT_OP_in_expr_relat460); dbg.location(90,15);
+			condition_op = (RELAT_OP4!=null?RELAT_OP4.getText():null);dbg.location(91,4);
 			pushFollow(FOLLOW_expr_arith_in_expr_relat474);
 			e=expr_arith();
 			state._fsp--;
-			dbg.location(90,17);
+			dbg.location(91,17);
 
-					v = e; 
+					aux = e;
 					
 					if (validate_condition) {
 						v = 1.0;
-						if(condition_op.equals("=") && condition_validator == v) {
+						if(condition_op.equals("=") && condition_validator == aux) {
 							validate_condition = true;
-						} else if(condition_op.equals("<>") && condition_validator != v) {
+						} else if(condition_op.equals("<>") && condition_validator != aux) {
 							validate_condition = true;
-						} else if(condition_op.equals("<") && condition_validator < v) {
+						} else if(condition_op.equals("<") && condition_validator < aux) {
 							validate_condition = true;
-						} else if(condition_op.equals(">") && condition_validator > v) {
+						} else if(condition_op.equals(">") && condition_validator > aux) {
 							validate_condition = true;
-						} else if(condition_op.equals("<") && condition_validator <= v) {
+						} else if(condition_op.equals("<=") && condition_validator <= aux) {
 							validate_condition = true;
-						} else if(condition_op.equals(">=") && condition_validator >= v) {
+						} else if(condition_op.equals(">=") && condition_validator >= aux) {
 							validate_condition = true;
 						} else {
 							System.out.println("Not a true condition.");
@@ -968,7 +969,7 @@ public class GLCParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(116, 4);
+		dbg.location(117, 4);
 
 		}
 		finally {

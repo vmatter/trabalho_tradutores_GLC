@@ -16,6 +16,7 @@ options {
 	boolean validate_condition = true;
 	double condition_validator = 0.0;
 	String condition_op = "";
+	double aux = 0.0;
 }
 
 prog:   commands+;
@@ -88,21 +89,21 @@ expr_relat returns [ double v ]
         } 
     	RELAT_OP {condition_op = $RELAT_OP.text;}    	
 	e = expr_arith {
-		$v = $e.v; 
+		aux = $e.v;
 		
 		if (validate_condition) {
 			$v = 1.0;
-			if(condition_op.equals("=") && condition_validator == $v) {
+			if(condition_op.equals("=") && condition_validator == aux) {
 				validate_condition = true;
-			} else if(condition_op.equals("<>") && condition_validator != $v) {
+			} else if(condition_op.equals("<>") && condition_validator != aux) {
 				validate_condition = true;
-			} else if(condition_op.equals("<") && condition_validator < $v) {
+			} else if(condition_op.equals("<") && condition_validator < aux) {
 				validate_condition = true;
-			} else if(condition_op.equals(">") && condition_validator > $v) {
+			} else if(condition_op.equals(">") && condition_validator > aux) {
 				validate_condition = true;
-			} else if(condition_op.equals("<") && condition_validator <= $v) {
+			} else if(condition_op.equals("<=") && condition_validator <= aux) {
 				validate_condition = true;
-			} else if(condition_op.equals(">=") && condition_validator >= $v) {
+			} else if(condition_op.equals(">=") && condition_validator >= aux) {
 				validate_condition = true;
 			} else {
 				System.out.println("Not a true condition.");
