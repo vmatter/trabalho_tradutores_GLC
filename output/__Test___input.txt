@@ -1,8 +1,6 @@
-a := 2;
-while a > 2 do
-   b := 2;
-   if 2 = 2 then
-      b := 4;
-   end
-   b := 6;	
+a := 7;
+while a < 5 do
+ if a > 5 then
+    a := a + 1;
+ end
 end

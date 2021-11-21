@@ -12,11 +12,10 @@ options {
 @members {
 	Map<String, Double> map = new HashMap<>();
 	String variable = "";
-	String variable_temp = "";	
+	String variable_temp = "";
 	boolean validate_condition = true;
 	double condition_validator = 0.0;
 	String condition_op = "";
-	boolean qualquerNome = false;
 }
 
 prog:   commands+;
@@ -92,7 +91,7 @@ expr_relat returns [ double v ]
 		$v = $e.v; 
 		
 		if (validate_condition) {
-		
+			$v = 1.0;
 			if(condition_op.equals("=") && condition_validator == $v) {
 				validate_condition = true;
 			} else if(condition_op.equals("<>") && condition_validator != $v) {
@@ -106,11 +105,10 @@ expr_relat returns [ double v ]
 			} else if(condition_op.equals(">=") && condition_validator >= $v) {
 				validate_condition = true;
 			} else {
-				System.out.println("Sei lá condição é falsa.");
+				System.out.println("Not a true condition.");
 				validate_condition = false;
+				$v = 0.0;
 			}
-			
-			$v = 1.0;
 		} else {
 			$v = 0.0;
 		}		
@@ -147,10 +145,6 @@ STRING
 
 CHAR:  '\'' ( ESC_SEQ | ~('\''|'\\') ) '\''
     ;
-    
-//ARITH_OP
-    //: '*'|'/'|'+'|'-'
-    //;	
     
 RELAT_OP
     :	'='|'<>'|'<'|'>'|'<='|'>='
