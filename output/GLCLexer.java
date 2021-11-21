@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g 2021-11-21 10:45:03
+// $ANTLR 3.5.1 E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g 2021-11-21 11:00:38
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -542,137 +542,60 @@ public class GLCLexer extends Lexer {
 		try {
 			int _type = COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:132:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
-			int alt10=2;
-			int LA10_0 = input.LA(1);
-			if ( (LA10_0=='/') ) {
-				int LA10_1 = input.LA(2);
-				if ( (LA10_1=='/') ) {
-					alt10=1;
-				}
-				else if ( (LA10_1=='*') ) {
-					alt10=2;
-				}
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:132:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' )
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:132:7: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+			{
+			match("//"); 
 
-				else {
-					int nvaeMark = input.mark();
-					try {
-						input.consume();
-						NoViableAltException nvae =
-							new NoViableAltException("", 10, 1, input);
-						throw nvae;
-					} finally {
-						input.rewind(nvaeMark);
-					}
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:132:12: (~ ( '\\n' | '\\r' ) )*
+			loop7:
+			while (true) {
+				int alt7=2;
+				int LA7_0 = input.LA(1);
+				if ( ((LA7_0 >= '\u0000' && LA7_0 <= '\t')||(LA7_0 >= '\u000B' && LA7_0 <= '\f')||(LA7_0 >= '\u000E' && LA7_0 <= '\uFFFF')) ) {
+					alt7=1;
 				}
 
-			}
-
-			else {
-				NoViableAltException nvae =
-					new NoViableAltException("", 10, 0, input);
-				throw nvae;
-			}
-
-			switch (alt10) {
+				switch (alt7) {
 				case 1 :
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:132:7: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:
 					{
-					match("//"); 
-
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:132:12: (~ ( '\\n' | '\\r' ) )*
-					loop7:
-					while (true) {
-						int alt7=2;
-						int LA7_0 = input.LA(1);
-						if ( ((LA7_0 >= '\u0000' && LA7_0 <= '\t')||(LA7_0 >= '\u000B' && LA7_0 <= '\f')||(LA7_0 >= '\u000E' && LA7_0 <= '\uFFFF')) ) {
-							alt7=1;
-						}
-
-						switch (alt7) {
-						case 1 :
-							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:
-							{
-							if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) {
-								input.consume();
-							}
-							else {
-								MismatchedSetException mse = new MismatchedSetException(null,input);
-								recover(mse);
-								throw mse;
-							}
-							}
-							break;
-
-						default :
-							break loop7;
-						}
+					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) {
+						input.consume();
 					}
-
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:132:26: ( '\\r' )?
-					int alt8=2;
-					int LA8_0 = input.LA(1);
-					if ( (LA8_0=='\r') ) {
-						alt8=1;
+					else {
+						MismatchedSetException mse = new MismatchedSetException(null,input);
+						recover(mse);
+						throw mse;
 					}
-					switch (alt8) {
-						case 1 :
-							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:132:26: '\\r'
-							{
-							match('\r'); 
-							}
-							break;
-
-					}
-
-					match('\n'); 
-					_channel=HIDDEN;
 					}
 					break;
-				case 2 :
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:133:9: '/*' ( options {greedy=false; } : . )* '*/'
+
+				default :
+					break loop7;
+				}
+			}
+
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:132:26: ( '\\r' )?
+			int alt8=2;
+			int LA8_0 = input.LA(1);
+			if ( (LA8_0=='\r') ) {
+				alt8=1;
+			}
+			switch (alt8) {
+				case 1 :
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:132:26: '\\r'
 					{
-					match("/*"); 
-
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:133:14: ( options {greedy=false; } : . )*
-					loop9:
-					while (true) {
-						int alt9=2;
-						int LA9_0 = input.LA(1);
-						if ( (LA9_0=='*') ) {
-							int LA9_1 = input.LA(2);
-							if ( (LA9_1=='/') ) {
-								alt9=2;
-							}
-							else if ( ((LA9_1 >= '\u0000' && LA9_1 <= '.')||(LA9_1 >= '0' && LA9_1 <= '\uFFFF')) ) {
-								alt9=1;
-							}
-
-						}
-						else if ( ((LA9_0 >= '\u0000' && LA9_0 <= ')')||(LA9_0 >= '+' && LA9_0 <= '\uFFFF')) ) {
-							alt9=1;
-						}
-
-						switch (alt9) {
-						case 1 :
-							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:133:42: .
-							{
-							matchAny(); 
-							}
-							break;
-
-						default :
-							break loop9;
-						}
-					}
-
-					match("*/"); 
-
-					_channel=HIDDEN;
+					match('\r'); 
 					}
 					break;
 
 			}
+
+			match('\n'); 
+			skip();
+			}
+
 			state.type = _type;
 			state.channel = _channel;
 		}
@@ -698,7 +621,7 @@ public class GLCLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			_channel=HIDDEN;
+			skip();
 			}
 
 			state.type = _type;
@@ -720,18 +643,18 @@ public class GLCLexer extends Lexer {
 			{
 			match('\"'); 
 			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:144:12: ( ESC_SEQ |~ ( '\\\\' | '\"' ) )*
-			loop11:
+			loop9:
 			while (true) {
-				int alt11=3;
-				int LA11_0 = input.LA(1);
-				if ( (LA11_0=='\\') ) {
-					alt11=1;
+				int alt9=3;
+				int LA9_0 = input.LA(1);
+				if ( (LA9_0=='\\') ) {
+					alt9=1;
 				}
-				else if ( ((LA11_0 >= '\u0000' && LA11_0 <= '!')||(LA11_0 >= '#' && LA11_0 <= '[')||(LA11_0 >= ']' && LA11_0 <= '\uFFFF')) ) {
-					alt11=2;
+				else if ( ((LA9_0 >= '\u0000' && LA9_0 <= '!')||(LA9_0 >= '#' && LA9_0 <= '[')||(LA9_0 >= ']' && LA9_0 <= '\uFFFF')) ) {
+					alt9=2;
 				}
 
-				switch (alt11) {
+				switch (alt9) {
 				case 1 :
 					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:144:14: ESC_SEQ
 					{
@@ -754,7 +677,7 @@ public class GLCLexer extends Lexer {
 					break;
 
 				default :
-					break loop11;
+					break loop9;
 				}
 			}
 
@@ -780,22 +703,22 @@ public class GLCLexer extends Lexer {
 			{
 			match('\''); 
 			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:147:13: ( ESC_SEQ |~ ( '\\'' | '\\\\' ) )
-			int alt12=2;
-			int LA12_0 = input.LA(1);
-			if ( (LA12_0=='\\') ) {
-				alt12=1;
+			int alt10=2;
+			int LA10_0 = input.LA(1);
+			if ( (LA10_0=='\\') ) {
+				alt10=1;
 			}
-			else if ( ((LA12_0 >= '\u0000' && LA12_0 <= '&')||(LA12_0 >= '(' && LA12_0 <= '[')||(LA12_0 >= ']' && LA12_0 <= '\uFFFF')) ) {
-				alt12=2;
+			else if ( ((LA10_0 >= '\u0000' && LA10_0 <= '&')||(LA10_0 >= '(' && LA10_0 <= '[')||(LA10_0 >= ']' && LA10_0 <= '\uFFFF')) ) {
+				alt10=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 12, 0, input);
+					new NoViableAltException("", 10, 0, input);
 				throw nvae;
 			}
 
-			switch (alt12) {
+			switch (alt10) {
 				case 1 :
 					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:147:15: ESC_SEQ
 					{
@@ -837,11 +760,11 @@ public class GLCLexer extends Lexer {
 			int _type = RELAT_OP;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
 			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:151:5: ( '=' | '<>' | '<' | '>' | '<=' | '>=' )
-			int alt13=6;
+			int alt11=6;
 			switch ( input.LA(1) ) {
 			case '=':
 				{
-				alt13=1;
+				alt11=1;
 				}
 				break;
 			case '<':
@@ -849,38 +772,38 @@ public class GLCLexer extends Lexer {
 				switch ( input.LA(2) ) {
 				case '>':
 					{
-					alt13=2;
+					alt11=2;
 					}
 					break;
 				case '=':
 					{
-					alt13=5;
+					alt11=5;
 					}
 					break;
 				default:
-					alt13=3;
+					alt11=3;
 				}
 				}
 				break;
 			case '>':
 				{
-				int LA13_3 = input.LA(2);
-				if ( (LA13_3=='=') ) {
-					alt13=6;
+				int LA11_3 = input.LA(2);
+				if ( (LA11_3=='=') ) {
+					alt11=6;
 				}
 
 				else {
-					alt13=4;
+					alt11=4;
 				}
 
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 13, 0, input);
+					new NoViableAltException("", 11, 0, input);
 				throw nvae;
 			}
-			switch (alt13) {
+			switch (alt11) {
 				case 1 :
 					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:151:7: '='
 					{
@@ -999,9 +922,9 @@ public class GLCLexer extends Lexer {
 	@Override
 	public void mTokens() throws RecognitionException {
 		// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:1:8: ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | VARIABLE | CONST | FLOAT | COMMENT | WS | STRING | CHAR | RELAT_OP | ATTRIB | SEMICOLON )
-		int alt14=22;
-		alt14 = dfa14.predict(input);
-		switch (alt14) {
+		int alt12=22;
+		alt12 = dfa12.predict(input);
+		switch (alt12) {
 			case 1 :
 				// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:1:10: T__15
 				{
@@ -1161,27 +1084,27 @@ public class GLCLexer extends Lexer {
 	}
 
 
-	protected DFA14 dfa14 = new DFA14(this);
-	static final String DFA14_eotS =
+	protected DFA12 dfa12 = new DFA12(this);
+	static final String DFA12_eotS =
 		"\6\uffff\1\26\5\14\1\uffff\1\35\11\uffff\1\36\2\14\1\41\2\14\2\uffff\1"+
 		"\14\1\45\1\uffff\2\14\1\50\1\uffff\1\51\1\14\2\uffff\1\53\1\uffff";
-	static final String DFA14_eofS =
+	static final String DFA12_eofS =
 		"\54\uffff";
-	static final String DFA14_minS =
-		"\1\11\5\uffff\1\52\1\157\1\154\1\146\2\150\1\uffff\1\56\11\uffff\1\101"+
+	static final String DFA12_minS =
+		"\1\11\5\uffff\1\57\1\157\1\154\1\146\2\150\1\uffff\1\56\11\uffff\1\101"+
 		"\1\163\1\144\1\101\1\145\1\151\2\uffff\1\145\1\101\1\uffff\1\156\1\154"+
 		"\1\101\1\uffff\1\101\1\145\2\uffff\1\101\1\uffff";
-	static final String DFA14_maxS =
+	static final String DFA12_maxS =
 		"\1\172\5\uffff\1\57\1\157\1\156\1\146\2\150\1\uffff\1\71\11\uffff\1\172"+
 		"\1\163\1\144\1\172\1\145\1\151\2\uffff\1\145\1\172\1\uffff\1\156\1\154"+
 		"\1\172\1\uffff\1\172\1\145\2\uffff\1\172\1\uffff";
-	static final String DFA14_acceptS =
+	static final String DFA12_acceptS =
 		"\1\uffff\1\1\1\2\1\3\1\4\1\5\6\uffff\1\15\1\uffff\1\17\1\21\1\22\1\23"+
 		"\1\24\1\25\1\26\1\20\1\6\6\uffff\1\16\1\7\2\uffff\1\12\3\uffff\1\11\2"+
 		"\uffff\1\10\1\13\1\uffff\1\14";
-	static final String DFA14_specialS =
+	static final String DFA12_specialS =
 		"\54\uffff}>";
-	static final String[] DFA14_transitionS = {
+	static final String[] DFA12_transitionS = {
 			"\2\17\2\uffff\1\17\22\uffff\1\17\1\uffff\1\20\4\uffff\1\21\1\1\1\2\1"+
 			"\3\1\4\1\uffff\1\5\1\16\1\6\12\15\1\23\1\24\3\22\2\uffff\32\14\6\uffff"+
 			"\3\14\1\7\1\10\3\14\1\11\12\14\1\12\2\14\1\13\3\14",
@@ -1190,7 +1113,7 @@ public class GLCLexer extends Lexer {
 			"",
 			"",
 			"",
-			"\1\25\4\uffff\1\25",
+			"\1\25",
 			"\1\27",
 			"\1\30\1\uffff\1\31",
 			"\1\32",
@@ -1230,34 +1153,34 @@ public class GLCLexer extends Lexer {
 			""
 	};
 
-	static final short[] DFA14_eot = DFA.unpackEncodedString(DFA14_eotS);
-	static final short[] DFA14_eof = DFA.unpackEncodedString(DFA14_eofS);
-	static final char[] DFA14_min = DFA.unpackEncodedStringToUnsignedChars(DFA14_minS);
-	static final char[] DFA14_max = DFA.unpackEncodedStringToUnsignedChars(DFA14_maxS);
-	static final short[] DFA14_accept = DFA.unpackEncodedString(DFA14_acceptS);
-	static final short[] DFA14_special = DFA.unpackEncodedString(DFA14_specialS);
-	static final short[][] DFA14_transition;
+	static final short[] DFA12_eot = DFA.unpackEncodedString(DFA12_eotS);
+	static final short[] DFA12_eof = DFA.unpackEncodedString(DFA12_eofS);
+	static final char[] DFA12_min = DFA.unpackEncodedStringToUnsignedChars(DFA12_minS);
+	static final char[] DFA12_max = DFA.unpackEncodedStringToUnsignedChars(DFA12_maxS);
+	static final short[] DFA12_accept = DFA.unpackEncodedString(DFA12_acceptS);
+	static final short[] DFA12_special = DFA.unpackEncodedString(DFA12_specialS);
+	static final short[][] DFA12_transition;
 
 	static {
-		int numStates = DFA14_transitionS.length;
-		DFA14_transition = new short[numStates][];
+		int numStates = DFA12_transitionS.length;
+		DFA12_transition = new short[numStates][];
 		for (int i=0; i<numStates; i++) {
-			DFA14_transition[i] = DFA.unpackEncodedString(DFA14_transitionS[i]);
+			DFA12_transition[i] = DFA.unpackEncodedString(DFA12_transitionS[i]);
 		}
 	}
 
-	protected class DFA14 extends DFA {
+	protected class DFA12 extends DFA {
 
-		public DFA14(BaseRecognizer recognizer) {
+		public DFA12(BaseRecognizer recognizer) {
 			this.recognizer = recognizer;
-			this.decisionNumber = 14;
-			this.eot = DFA14_eot;
-			this.eof = DFA14_eof;
-			this.min = DFA14_min;
-			this.max = DFA14_max;
-			this.accept = DFA14_accept;
-			this.special = DFA14_special;
-			this.transition = DFA14_transition;
+			this.decisionNumber = 12;
+			this.eot = DFA12_eot;
+			this.eof = DFA12_eof;
+			this.min = DFA12_min;
+			this.max = DFA12_max;
+			this.accept = DFA12_accept;
+			this.special = DFA12_special;
+			this.transition = DFA12_transition;
 		}
 		@Override
 		public String getDescription() {

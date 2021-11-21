@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g 2021-11-21 10:45:03
+// $ANTLR 3.5.1 E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g 2021-11-21 11:00:38
 
 	import java.util.HashMap;
 	import java.util.Map;
@@ -53,8 +53,8 @@ public class GLCParser extends DebugParser {
 
 
 	public static final String[] ruleNames = new String[] {
-		"invalidRule", "expr_attrib", "conditional_else", "loop", "expr_relat", 
-		"prog", "commands", "conditional", "expr_arith"
+		"invalidRule", "expr_arith", "conditional_else", "loop", "expr_relat", 
+		"prog", "expr_attrib", "conditional", "commands"
 	};
 
 	public static final boolean[] decisionCanBacktrack = new boolean[] {
