@@ -26,6 +26,7 @@ commands
     | loop
     | expr_attrib
     | SEMICOLON
+    | COMMENT
     ;	
     
 conditional returns [ double v ]
@@ -130,14 +131,14 @@ FLOAT
 
 COMMENT
     :	'//' ~('\n'|'\r')* '\r'? '\n' {skip();}
-    //|   '/*' ( options {greedy=false;} : . )* '*/' {$channel=HIDDEN;}
+    |   '/*'.*'*/' {$channel=HIDDEN;}
     ;
 
 WS  :   ( ' '
         | '\t'
         | '\r'
         | '\n'
-        ) {skip();}
+        ) {$channel=HIDDEN;}
     ;
 
 STRING

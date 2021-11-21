@@ -1,9 +1,9 @@
-a := 3;
-while a < 5 do
+a := 1;
+while a < 3 do
    b := 2;
    if 2 = 2 then
       b := 4;
    end
-   b := 6;
+   b := b + 1;
    a := a + 1;
 end
