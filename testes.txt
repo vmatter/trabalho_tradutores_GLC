@@ -45,8 +45,6 @@ while a < 5 do
    a := a + 1;
 end
 
--> Saída Esperada
-
 #5
 
 if a > 2 then 
@@ -59,5 +57,3 @@ if a > 2 then
 else
    b := 5;
 end
-
--> Saída Esperada
