@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g 2021-11-21 19:25:47
+// $ANTLR 3.5.1 E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g 2021-11-22 22:07:46
 
 	import java.util.HashMap;
 	import java.util.Map;
@@ -53,8 +53,8 @@ public class GLCParser extends DebugParser {
 
 
 	public static final String[] ruleNames = new String[] {
-		"invalidRule", "expr_relat", "conditional", "prog", "loop", "commands", 
-		"expr_arith", "conditional_else", "expr_attrib"
+		"invalidRule", "loop", "expr_relat", "expr_attrib", "conditional_else", 
+		"commands", "prog", "conditional", "expr_arith"
 	};
 
 	public static final boolean[] decisionCanBacktrack = new boolean[] {
@@ -103,7 +103,7 @@ public class GLCParser extends DebugParser {
 		boolean validate_condition = true;
 		double condition_validator = 0.0;
 		String condition_op = "";
-		double aux = 0.0;
+		double validator_aux = 0.0;
 
 
 
@@ -451,8 +451,9 @@ public class GLCParser extends DebugParser {
 			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:37:7: 'else' ( commands )+
 			{
 			dbg.location(37,7);
-			match(input,22,FOLLOW_22_in_conditional_else146); dbg.location(37,14);
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:37:14: ( commands )+
+			validate_condition = true;dbg.location(37,36);
+			match(input,22,FOLLOW_22_in_conditional_else149); dbg.location(37,43);
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:37:43: ( commands )+
 			int cnt5=0;
 			try { dbg.enterSubRule(5);
 
@@ -472,10 +473,10 @@ public class GLCParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:37:14: commands
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:37:43: commands
 					{
-					dbg.location(37,14);
-					pushFollow(FOLLOW_commands_in_conditional_else148);
+					dbg.location(37,43);
+					pushFollow(FOLLOW_commands_in_conditional_else151);
 					commands();
 					state._fsp--;
 
@@ -537,13 +538,13 @@ public class GLCParser extends DebugParser {
 			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:41:7: 'while' e= expr_relat 'do' ( commands )+ 'end'
 			{
 			dbg.location(41,7);
-			match(input,26,FOLLOW_26_in_loop176); dbg.location(41,17);
-			pushFollow(FOLLOW_expr_relat_in_loop182);
+			match(input,26,FOLLOW_26_in_loop178); dbg.location(41,17);
+			pushFollow(FOLLOW_expr_relat_in_loop184);
 			e=expr_relat();
 			state._fsp--;
 			dbg.location(41,30);
 			v = e;dbg.location(41,43);
-			match(input,21,FOLLOW_21_in_loop186); dbg.location(41,48);
+			match(input,21,FOLLOW_21_in_loop188); dbg.location(41,48);
 			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:41:48: ( commands )+
 			int cnt6=0;
 			try { dbg.enterSubRule(6);
@@ -567,7 +568,7 @@ public class GLCParser extends DebugParser {
 					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:41:48: commands
 					{
 					dbg.location(41,48);
-					pushFollow(FOLLOW_commands_in_loop188);
+					pushFollow(FOLLOW_commands_in_loop190);
 					commands();
 					state._fsp--;
 
@@ -585,7 +586,7 @@ public class GLCParser extends DebugParser {
 			}
 			} finally {dbg.exitSubRule(6);}
 			dbg.location(41,58);
-			match(input,23,FOLLOW_23_in_loop191); dbg.location(41,64);
+			match(input,23,FOLLOW_23_in_loop193); dbg.location(41,64);
 			if (v == 1) validate_condition = true;
 			}
 
@@ -619,7 +620,8 @@ public class GLCParser extends DebugParser {
 
 
 		Token VARIABLE1=null;
-		double e =0.0;
+		Token ATTRIB2=null;
+		ParserRuleReturnScope e =null;
 
 		try { dbg.enterRule(getGrammarFileName(), "expr_attrib");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
@@ -633,15 +635,16 @@ public class GLCParser extends DebugParser {
 			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:45:7: VARIABLE ATTRIB e= expr_arith
 			{
 			dbg.location(45,7);
-			VARIABLE1=(Token)match(input,VARIABLE,FOLLOW_VARIABLE_in_expr_attrib218); dbg.location(45,16);
+			VARIABLE1=(Token)match(input,VARIABLE,FOLLOW_VARIABLE_in_expr_attrib220); dbg.location(45,16);
 			variable = (VARIABLE1!=null?VARIABLE1.getText():null);dbg.location(45,45);
-			match(input,ATTRIB,FOLLOW_ATTRIB_in_expr_attrib222); dbg.location(45,54);
-			pushFollow(FOLLOW_expr_arith_in_expr_attrib228);
+			ATTRIB2=(Token)match(input,ATTRIB,FOLLOW_ATTRIB_in_expr_attrib224); dbg.location(45,54);
+			pushFollow(FOLLOW_expr_arith_in_expr_attrib230);
 			e=expr_arith();
 			state._fsp--;
 			dbg.location(45,67);
 
-			    		v = e;
+			    		v = (e!=null?((GLCParser.expr_arith_return)e).v:0.0);
+			    		//System.out.println("" + (VARIABLE1!=null?VARIABLE1.getText():null) + (ATTRIB2!=null?ATTRIB2.getText():null) + (e!=null?input.toString(e.start,e.stop):null) + " --> " + validate_condition);
 					if(validate_condition) { 
 						System.out.println(variable + " = "  + v); 
 						map.put(variable, v);
@@ -657,7 +660,7 @@ public class GLCParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(52, 4);
+		dbg.location(53, 4);
 
 		}
 		finally {
@@ -671,24 +674,28 @@ public class GLCParser extends DebugParser {
 	// $ANTLR end "expr_attrib"
 
 
+	public static class expr_arith_return extends ParserRuleReturnScope {
+		public double v;
+	};
+
 
 	// $ANTLR start "expr_arith"
-	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:54:1: expr_arith returns [ double v ] : ( ( CONST | VARIABLE ) ( '*' e= expr_arith | '/' e= expr_arith | '+' e= expr_arith | '-' e= expr_arith )? | '(' e= expr_arith ')' );
-	public final double expr_arith() throws RecognitionException {
-		double v = 0.0;
+	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:55:1: expr_arith returns [ double v ] : ( ( CONST | VARIABLE ) ( '*' e= expr_arith | '/' e= expr_arith | '+' e= expr_arith | '-' e= expr_arith )? | '(' e= expr_arith ')' );
+	public final GLCParser.expr_arith_return expr_arith() throws RecognitionException {
+		GLCParser.expr_arith_return retval = new GLCParser.expr_arith_return();
+		retval.start = input.LT(1);
 
-
-		Token CONST2=null;
-		Token VARIABLE3=null;
-		double e =0.0;
+		Token CONST3=null;
+		Token VARIABLE4=null;
+		ParserRuleReturnScope e =null;
 
 		try { dbg.enterRule(getGrammarFileName(), "expr_arith");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(54, 0);
+		dbg.location(55, 0);
 
 		try {
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:55:5: ( ( CONST | VARIABLE ) ( '*' e= expr_arith | '/' e= expr_arith | '+' e= expr_arith | '-' e= expr_arith )? | '(' e= expr_arith ')' )
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:56:5: ( ( CONST | VARIABLE ) ( '*' e= expr_arith | '/' e= expr_arith | '+' e= expr_arith | '-' e= expr_arith )? | '(' e= expr_arith ')' )
 			int alt9=2;
 			try { dbg.enterDecision(9, decisionCanBacktrack[9]);
 
@@ -713,10 +720,10 @@ public class GLCParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:55:9: ( CONST | VARIABLE ) ( '*' e= expr_arith | '/' e= expr_arith | '+' e= expr_arith | '-' e= expr_arith )?
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:56:9: ( CONST | VARIABLE ) ( '*' e= expr_arith | '/' e= expr_arith | '+' e= expr_arith | '-' e= expr_arith )?
 					{
-					dbg.location(55,9);
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:55:9: ( CONST | VARIABLE )
+					dbg.location(56,9);
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:56:9: ( CONST | VARIABLE )
 					int alt7=2;
 					try { dbg.enterSubRule(7);
 					try { dbg.enterDecision(7, decisionCanBacktrack[7]);
@@ -742,23 +749,23 @@ public class GLCParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:56:10: CONST
+							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:57:10: CONST
 							{
-							dbg.location(56,10);
-							CONST2=(Token)match(input,CONST,FOLLOW_CONST_in_expr_arith268); dbg.location(56,16);
-							v = Double.parseDouble((CONST2!=null?CONST2.getText():null));
+							dbg.location(57,10);
+							CONST3=(Token)match(input,CONST,FOLLOW_CONST_in_expr_arith270); dbg.location(57,16);
+							retval.v = Double.parseDouble((CONST3!=null?CONST3.getText():null));
 							}
 							break;
 						case 2 :
 							dbg.enterAlt(2);
 
-							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:57:9: VARIABLE
+							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:58:9: VARIABLE
 							{
-							dbg.location(57,9);
-							VARIABLE3=(Token)match(input,VARIABLE,FOLLOW_VARIABLE_in_expr_arith280); dbg.location(57,18);
-							 variable_temp = (VARIABLE3!=null?VARIABLE3.getText():null);
+							dbg.location(58,9);
+							VARIABLE4=(Token)match(input,VARIABLE,FOLLOW_VARIABLE_in_expr_arith282); dbg.location(58,18);
+							 variable_temp = (VARIABLE4!=null?VARIABLE4.getText():null);
 							                   	if(map.get(variable_temp) != null) {
-										   v = map.get(variable_temp);
+										   retval.v = map.get(variable_temp);
 									   	} else {
 										   System.out.println("ERROR: Variable " + variable_temp + " does not exist.");
 									        }
@@ -768,8 +775,8 @@ public class GLCParser extends DebugParser {
 
 					}
 					} finally {dbg.exitSubRule(7);}
-					dbg.location(65,9);
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:65:9: ( '*' e= expr_arith | '/' e= expr_arith | '+' e= expr_arith | '-' e= expr_arith )?
+					dbg.location(66,9);
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:66:9: ( '*' e= expr_arith | '/' e= expr_arith | '+' e= expr_arith | '-' e= expr_arith )?
 					int alt8=5;
 					try { dbg.enterSubRule(8);
 					try { dbg.enterDecision(8, decisionCanBacktrack[8]);
@@ -802,35 +809,35 @@ public class GLCParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:67:14: '*' e= expr_arith
+							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:68:14: '*' e= expr_arith
 							{
-							dbg.location(67,14);
-							match(input,17,FOLLOW_17_in_expr_arith346); dbg.location(67,20);
-							pushFollow(FOLLOW_expr_arith_in_expr_arith352);
+							dbg.location(68,14);
+							match(input,17,FOLLOW_17_in_expr_arith348); dbg.location(68,20);
+							pushFollow(FOLLOW_expr_arith_in_expr_arith354);
 							e=expr_arith();
 							state._fsp--;
-							dbg.location(67,33);
+							dbg.location(68,33);
 
-										v *= e;
+										retval.v *= (e!=null?((GLCParser.expr_arith_return)e).v:0.0);
 									    
 							}
 							break;
 						case 2 :
 							dbg.enterAlt(2);
 
-							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:70:8: '/' e= expr_arith
+							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:71:8: '/' e= expr_arith
 							{
-							dbg.location(70,8);
-							match(input,20,FOLLOW_20_in_expr_arith363); dbg.location(70,14);
-							pushFollow(FOLLOW_expr_arith_in_expr_arith369);
+							dbg.location(71,8);
+							match(input,20,FOLLOW_20_in_expr_arith365); dbg.location(71,14);
+							pushFollow(FOLLOW_expr_arith_in_expr_arith371);
 							e=expr_arith();
 							state._fsp--;
-							dbg.location(70,27);
+							dbg.location(71,27);
 
-										if(e == 0) {
+										if((e!=null?((GLCParser.expr_arith_return)e).v:0.0) == 0) {
 											System.out.println("ERROR: Division by 0.");
 										} else {
-											v /= e;
+											retval.v /= (e!=null?((GLCParser.expr_arith_return)e).v:0.0);
 										}
 									    
 							}
@@ -838,32 +845,32 @@ public class GLCParser extends DebugParser {
 						case 3 :
 							dbg.enterAlt(3);
 
-							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:77:8: '+' e= expr_arith
+							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:78:8: '+' e= expr_arith
 							{
-							dbg.location(77,8);
-							match(input,18,FOLLOW_18_in_expr_arith380); dbg.location(77,14);
-							pushFollow(FOLLOW_expr_arith_in_expr_arith386);
+							dbg.location(78,8);
+							match(input,18,FOLLOW_18_in_expr_arith382); dbg.location(78,14);
+							pushFollow(FOLLOW_expr_arith_in_expr_arith388);
 							e=expr_arith();
 							state._fsp--;
-							dbg.location(77,27);
+							dbg.location(78,27);
 
-										v += e;
+										retval.v += (e!=null?((GLCParser.expr_arith_return)e).v:0.0);
 									    
 							}
 							break;
 						case 4 :
 							dbg.enterAlt(4);
 
-							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:80:8: '-' e= expr_arith
+							// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:81:8: '-' e= expr_arith
 							{
-							dbg.location(80,8);
-							match(input,19,FOLLOW_19_in_expr_arith397); dbg.location(80,14);
-							pushFollow(FOLLOW_expr_arith_in_expr_arith403);
+							dbg.location(81,8);
+							match(input,19,FOLLOW_19_in_expr_arith399); dbg.location(81,14);
+							pushFollow(FOLLOW_expr_arith_in_expr_arith405);
 							e=expr_arith();
 							state._fsp--;
-							dbg.location(80,27);
+							dbg.location(81,27);
 
-										v -= e;
+										retval.v -= (e!=null?((GLCParser.expr_arith_return)e).v:0.0);
 									    
 							}
 							break;
@@ -876,20 +883,22 @@ public class GLCParser extends DebugParser {
 				case 2 :
 					dbg.enterAlt(2);
 
-					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:84:8: '(' e= expr_arith ')'
+					// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:85:8: '(' e= expr_arith ')'
 					{
-					dbg.location(84,8);
-					match(input,15,FOLLOW_15_in_expr_arith418); dbg.location(84,14);
-					pushFollow(FOLLOW_expr_arith_in_expr_arith424);
+					dbg.location(85,8);
+					match(input,15,FOLLOW_15_in_expr_arith420); dbg.location(85,14);
+					pushFollow(FOLLOW_expr_arith_in_expr_arith426);
 					e=expr_arith();
 					state._fsp--;
-					dbg.location(84,27);
-					v = e;dbg.location(84,40);
-					match(input,16,FOLLOW_16_in_expr_arith428); 
+					dbg.location(85,27);
+					retval.v = (e!=null?((GLCParser.expr_arith_return)e).v:0.0);dbg.location(85,40);
+					match(input,16,FOLLOW_16_in_expr_arith430); 
 					}
 					break;
 
 			}
+			retval.stop = input.LT(-1);
+
 		}
 		catch (RecognitionException re) {
 			reportError(re);
@@ -898,7 +907,7 @@ public class GLCParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(85, 1);
+		dbg.location(86, 1);
 
 		}
 		finally {
@@ -907,65 +916,65 @@ public class GLCParser extends DebugParser {
 			if ( getRuleLevel()==0 ) {dbg.terminate();}
 		}
 
-		return v;
+		return retval;
 	}
 	// $ANTLR end "expr_arith"
 
 
 
 	// $ANTLR start "expr_relat"
-	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:87:1: expr_relat returns [ double v ] : e= expr_arith RELAT_OP e= expr_arith ;
+	// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:88:1: expr_relat returns [ double v ] : e= expr_arith RELAT_OP e= expr_arith ;
 	public final double expr_relat() throws RecognitionException {
 		double v = 0.0;
 
 
-		Token RELAT_OP4=null;
-		double e =0.0;
+		Token RELAT_OP5=null;
+		ParserRuleReturnScope e =null;
 
 		try { dbg.enterRule(getGrammarFileName(), "expr_relat");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(87, 0);
+		dbg.location(88, 0);
 
 		try {
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:88:5: (e= expr_arith RELAT_OP e= expr_arith )
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:89:5: (e= expr_arith RELAT_OP e= expr_arith )
 			dbg.enterAlt(1);
 
-			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:88:7: e= expr_arith RELAT_OP e= expr_arith
+			// E:\\vitor_desktop\\Unisinos\\Tradutores\\trabalho GB\\trabalho\\trabalho_tradutores_GLC\\GLC.g:89:7: e= expr_arith RELAT_OP e= expr_arith
 			{
-			dbg.location(88,9);
-			pushFollow(FOLLOW_expr_arith_in_expr_relat458);
+			dbg.location(89,9);
+			pushFollow(FOLLOW_expr_arith_in_expr_relat460);
 			e=expr_arith();
 			state._fsp--;
-			dbg.location(88,22);
+			dbg.location(89,22);
 
-			 	    condition_validator = e;
-			        dbg.location(91,6);
-			RELAT_OP4=(Token)match(input,RELAT_OP,FOLLOW_RELAT_OP_in_expr_relat468); dbg.location(91,15);
-			condition_op = (RELAT_OP4!=null?RELAT_OP4.getText():null);dbg.location(92,4);
-			pushFollow(FOLLOW_expr_arith_in_expr_relat482);
+			 	    condition_validator = (e!=null?((GLCParser.expr_arith_return)e).v:0.0);
+			        dbg.location(92,6);
+			RELAT_OP5=(Token)match(input,RELAT_OP,FOLLOW_RELAT_OP_in_expr_relat469); dbg.location(92,15);
+			condition_op = (RELAT_OP5!=null?RELAT_OP5.getText():null);dbg.location(93,4);
+			pushFollow(FOLLOW_expr_arith_in_expr_relat478);
 			e=expr_arith();
 			state._fsp--;
-			dbg.location(92,17);
+			dbg.location(93,17);
 
-					aux = e;
+					validator_aux = (e!=null?((GLCParser.expr_arith_return)e).v:0.0);
 					
 					if (validate_condition) {
 						v = 1.0;
-						if(condition_op.equals("=") && condition_validator == aux) {
+						if(condition_op.equals("=") && condition_validator == validator_aux) {
 							validate_condition = true;
-						} else if(condition_op.equals("<>") && condition_validator != aux) {
+						} else if(condition_op.equals("<>") && condition_validator != validator_aux) {
 							validate_condition = true;
-						} else if(condition_op.equals("<") && condition_validator < aux) {
+						} else if(condition_op.equals("<") && condition_validator < validator_aux) {
 							validate_condition = true;
-						} else if(condition_op.equals(">") && condition_validator > aux) {
+						} else if(condition_op.equals(">") && condition_validator > validator_aux) {
 							validate_condition = true;
-						} else if(condition_op.equals("<=") && condition_validator <= aux) {
+						} else if(condition_op.equals("<=") && condition_validator <= validator_aux) {
 							validate_condition = true;
-						} else if(condition_op.equals(">=") && condition_validator >= aux) {
+						} else if(condition_op.equals(">=") && condition_validator >= validator_aux) {
 							validate_condition = true;
-						} else {
-							System.out.println("Not a true condition.");
+						} else {				
+							System.out.println("not a true condition.");
 							validate_condition = false;
 							v = 0.0;
 						}
@@ -983,7 +992,7 @@ public class GLCParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(118, 4);
+		dbg.location(119, 4);
 
 		}
 		finally {
@@ -1012,30 +1021,30 @@ public class GLCParser extends DebugParser {
 	public static final BitSet FOLLOW_commands_in_conditional121 = new BitSet(new long[]{0x0000000005C02840L});
 	public static final BitSet FOLLOW_conditional_else_in_conditional124 = new BitSet(new long[]{0x0000000000800000L});
 	public static final BitSet FOLLOW_23_in_conditional127 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_22_in_conditional_else146 = new BitSet(new long[]{0x0000000005002840L});
-	public static final BitSet FOLLOW_commands_in_conditional_else148 = new BitSet(new long[]{0x0000000005002842L});
-	public static final BitSet FOLLOW_26_in_loop176 = new BitSet(new long[]{0x000000000000A080L});
-	public static final BitSet FOLLOW_expr_relat_in_loop182 = new BitSet(new long[]{0x0000000000200000L});
-	public static final BitSet FOLLOW_21_in_loop186 = new BitSet(new long[]{0x0000000005002840L});
-	public static final BitSet FOLLOW_commands_in_loop188 = new BitSet(new long[]{0x0000000005802840L});
-	public static final BitSet FOLLOW_23_in_loop191 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_VARIABLE_in_expr_attrib218 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ATTRIB_in_expr_attrib222 = new BitSet(new long[]{0x000000000000A080L});
-	public static final BitSet FOLLOW_expr_arith_in_expr_attrib228 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_CONST_in_expr_arith268 = new BitSet(new long[]{0x00000000001E0002L});
-	public static final BitSet FOLLOW_VARIABLE_in_expr_arith280 = new BitSet(new long[]{0x00000000001E0002L});
-	public static final BitSet FOLLOW_17_in_expr_arith346 = new BitSet(new long[]{0x000000000000A080L});
-	public static final BitSet FOLLOW_expr_arith_in_expr_arith352 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_20_in_expr_arith363 = new BitSet(new long[]{0x000000000000A080L});
-	public static final BitSet FOLLOW_expr_arith_in_expr_arith369 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_18_in_expr_arith380 = new BitSet(new long[]{0x000000000000A080L});
-	public static final BitSet FOLLOW_expr_arith_in_expr_arith386 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_19_in_expr_arith397 = new BitSet(new long[]{0x000000000000A080L});
-	public static final BitSet FOLLOW_expr_arith_in_expr_arith403 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_15_in_expr_arith418 = new BitSet(new long[]{0x000000000000A080L});
-	public static final BitSet FOLLOW_expr_arith_in_expr_arith424 = new BitSet(new long[]{0x0000000000010000L});
-	public static final BitSet FOLLOW_16_in_expr_arith428 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_expr_arith_in_expr_relat458 = new BitSet(new long[]{0x0000000000000400L});
-	public static final BitSet FOLLOW_RELAT_OP_in_expr_relat468 = new BitSet(new long[]{0x000000000000A080L});
-	public static final BitSet FOLLOW_expr_arith_in_expr_relat482 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_22_in_conditional_else149 = new BitSet(new long[]{0x0000000005002840L});
+	public static final BitSet FOLLOW_commands_in_conditional_else151 = new BitSet(new long[]{0x0000000005002842L});
+	public static final BitSet FOLLOW_26_in_loop178 = new BitSet(new long[]{0x000000000000A080L});
+	public static final BitSet FOLLOW_expr_relat_in_loop184 = new BitSet(new long[]{0x0000000000200000L});
+	public static final BitSet FOLLOW_21_in_loop188 = new BitSet(new long[]{0x0000000005002840L});
+	public static final BitSet FOLLOW_commands_in_loop190 = new BitSet(new long[]{0x0000000005802840L});
+	public static final BitSet FOLLOW_23_in_loop193 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_VARIABLE_in_expr_attrib220 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ATTRIB_in_expr_attrib224 = new BitSet(new long[]{0x000000000000A080L});
+	public static final BitSet FOLLOW_expr_arith_in_expr_attrib230 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CONST_in_expr_arith270 = new BitSet(new long[]{0x00000000001E0002L});
+	public static final BitSet FOLLOW_VARIABLE_in_expr_arith282 = new BitSet(new long[]{0x00000000001E0002L});
+	public static final BitSet FOLLOW_17_in_expr_arith348 = new BitSet(new long[]{0x000000000000A080L});
+	public static final BitSet FOLLOW_expr_arith_in_expr_arith354 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_20_in_expr_arith365 = new BitSet(new long[]{0x000000000000A080L});
+	public static final BitSet FOLLOW_expr_arith_in_expr_arith371 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_18_in_expr_arith382 = new BitSet(new long[]{0x000000000000A080L});
+	public static final BitSet FOLLOW_expr_arith_in_expr_arith388 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_19_in_expr_arith399 = new BitSet(new long[]{0x000000000000A080L});
+	public static final BitSet FOLLOW_expr_arith_in_expr_arith405 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_15_in_expr_arith420 = new BitSet(new long[]{0x000000000000A080L});
+	public static final BitSet FOLLOW_expr_arith_in_expr_arith426 = new BitSet(new long[]{0x0000000000010000L});
+	public static final BitSet FOLLOW_16_in_expr_arith430 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_expr_arith_in_expr_relat460 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_RELAT_OP_in_expr_relat469 = new BitSet(new long[]{0x000000000000A080L});
+	public static final BitSet FOLLOW_expr_arith_in_expr_relat478 = new BitSet(new long[]{0x0000000000000002L});
 }

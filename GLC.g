@@ -16,7 +16,7 @@ options {
 	boolean validate_condition = true;
 	double condition_validator = 0.0;
 	String condition_op = "";
-	double aux = 0.0;
+	double validator_aux = 0.0;
 }
 
 prog:   commands+;
@@ -33,8 +33,8 @@ conditional returns [ double v ]
     :	'if'  e = expr_relat {$v = $e.v;} 'then' commands+ conditional_else? 'end' {if ($v == 1) validate_condition = true;}
     ;
 
-conditional_else
-    : 'else' commands+ 
+conditional_else 
+    : {validate_condition = true;} 'else' commands+
     ;	
     
 loop returns [ double v ]
@@ -44,6 +44,7 @@ loop returns [ double v ]
 expr_attrib returns [ double v ]
     : VARIABLE {variable = $VARIABLE.text;} ATTRIB e = expr_arith {
     		$v = $e.v;
+    		//System.out.println("" + $VARIABLE.text + $ATTRIB.text + $expr_arith.text + " --> " + validate_condition);
 		if(validate_condition) { 
 			System.out.println(variable + " = "  + $v); 
 			map.put(variable, $v);
@@ -87,27 +88,27 @@ expr_arith returns [ double v ]
 expr_relat returns [ double v ]
     :	e = expr_arith {
  	    condition_validator = $e.v;
-        } 
-    	RELAT_OP {condition_op = $RELAT_OP.text;}    	
+        }
+    	RELAT_OP {condition_op = $RELAT_OP.text;}
 	e = expr_arith {
-		aux = $e.v;
+		validator_aux = $e.v;
 		
 		if (validate_condition) {
 			$v = 1.0;
-			if(condition_op.equals("=") && condition_validator == aux) {
+			if(condition_op.equals("=") && condition_validator == validator_aux) {
 				validate_condition = true;
-			} else if(condition_op.equals("<>") && condition_validator != aux) {
+			} else if(condition_op.equals("<>") && condition_validator != validator_aux) {
 				validate_condition = true;
-			} else if(condition_op.equals("<") && condition_validator < aux) {
+			} else if(condition_op.equals("<") && condition_validator < validator_aux) {
 				validate_condition = true;
-			} else if(condition_op.equals(">") && condition_validator > aux) {
+			} else if(condition_op.equals(">") && condition_validator > validator_aux) {
 				validate_condition = true;
-			} else if(condition_op.equals("<=") && condition_validator <= aux) {
+			} else if(condition_op.equals("<=") && condition_validator <= validator_aux) {
 				validate_condition = true;
-			} else if(condition_op.equals(">=") && condition_validator >= aux) {
+			} else if(condition_op.equals(">=") && condition_validator >= validator_aux) {
 				validate_condition = true;
-			} else {
-				System.out.println("Not a true condition.");
+			} else {				
+				System.out.println("not a true condition.");
 				validate_condition = false;
 				$v = 0.0;
 			}
