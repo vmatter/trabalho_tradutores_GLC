@@ -34,7 +34,13 @@ conditional returns [ double v ]
     ;
 
 conditional_else 
-    : {validate_condition = true;} 'else' commands+
+    : 'else' exec_else 
+    ;
+
+exec_else
+    : {if (validate_condition){ validate_condition = false;} else {validate_condition = true;}} 
+    	commands+ 
+      {if (validate_condition) {validate_condition = false;} else {validate_condition = true;}}
     ;	
     
 loop returns [ double v ]
